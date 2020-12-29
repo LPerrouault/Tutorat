@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Database.Logincontroller">
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #47525c;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="brandingImageView" fitHeight="73.0" fitWidth="270.0" layoutX="173.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../image/bd_bas_2018.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="TexfieldIdentifiant" focusColor="#2baafc" layoutX="186.0" layoutY="165.0" prefHeight="35.0" prefWidth="260.0" promptText=" Identifiants" style="-fx-prompt-text-fill: #DCDCDC; -fx-focus-color: #DCDCDC;" unFocusColor="WHITE">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="PasswordField" focusColor="#2baafc" layoutX="186.0" layoutY="239.0" prefHeight="35.0" prefWidth="260.0" promptText=" Mot de passe" style="-fx-prompt-text-fill: #DCDCDC;" unFocusColor="WHITE">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="loginButton" layoutX="216.0" layoutY="318.0" onAction="#loginAction" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #2BAAFC;" text="Se connecter" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </JFXButton>
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="150.0" layoutY="194.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="150.0" layoutY="268.0" size="30" />
+            <Hyperlink fx:id="linkFogetPassword" layoutX="237.0" layoutY="406.0" onAction="#linkAction" text="mots de passe oublié ?" textFill="GAINSBORO">
+               <font>
+                  <Font name="Arial Italic" size="10.5" />
+               </font>
+            </Hyperlink>
+            <Label fx:id="messageConnection" alignment="CENTER" layoutX="150.0" layoutY="123.0" prefHeight="17.0" prefWidth="300.0" textFill="#eeb2b2" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
