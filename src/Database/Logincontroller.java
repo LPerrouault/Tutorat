@@ -25,7 +25,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class Logincontroller  implements  Initializable {
+class LoginController implements  Initializable {
 
 
     @FXML
@@ -42,19 +42,6 @@ public class Logincontroller  implements  Initializable {
     private Hyperlink linkFogetPassword;
     private String fogerPasslink ="https://multipass.univ-tours.fr/activation.php";;
 
-    //paramettre connection database
-    private Connection cn=null;
-    private Statement st = null;
-    String databaseName = "projettutorat";
-    String databaseUser = "root";
-    String databasePassword = "";
-    String url = "jdbc:mysql://localhost/"+databaseName;
-    EtuInterfaceController com =new EtuInterfaceController();
-
-    //constructor initialisation database
-    public Logincontroller() throws SQLException, ClassNotFoundException {
-        cn = DatabaseConection.getInstance(url, databaseUser,databasePassword);
-    }
 
     @Override
     //initialisation des resources au demarrage
@@ -72,10 +59,11 @@ public class Logincontroller  implements  Initializable {
     }
 
     //connection etablie redirection vers les espace des utilisateurs
-    public void loginAction(ActionEvent actionEvent) throws IOException, SQLException {
+    public void loginAction(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
+        DatabaseInteraction dataInterac = new DatabaseInteraction();
             if (TexfieldIdentifiant.getText().isEmpty() == false && PasswordField.getText().isEmpty() == false) {
-                validationLogin();
-                switch (getStatutConnection()) {
+                dataInterac.validationLogin(TexfieldIdentifiant.getText(),PasswordField.getText());
+                switch (dataInterac.getStatutConnection(TexfieldIdentifiant.getText(),PasswordField.getText())) {
                     case "Etudiant": {
                         //interface Etudiant
                         Parent root = FXMLLoader.load(getClass().getResource("../Interface/EtuInterface.fxml"));
@@ -104,38 +92,4 @@ public class Logincontroller  implements  Initializable {
                 messageConnection.setText("Mots de passe ou identifiant invalide");
             }
     }
-
-    public void validationLogin() {
-        //Connection a la Base de doné
-        //Preparation de la requête
-        String verifyLogin = "Select count(1) from user where ( userNumEtu = '"+TexfieldIdentifiant.getText()+
-                "' OR userMail = '"+TexfieldIdentifiant.getText()+"' ) AND password = '"+PasswordField.getText()+"'";
-        try{
-            //execution de la reqête
-            st = cn.createStatement();
-            ResultSet resultSet = st.executeQuery(verifyLogin);
-            //verification des informatiions dans la Base
-            while (resultSet.next()){
-                if (resultSet.getInt(1)==1)
-                    messageConnection.setText("Connection impossible, veillez à ressayer prochainement.");
-            }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            e.getCause();
-        }
-    }
-    //Statue de l'utilisateur pour rediriger vers le bon interface
-    public String getStatutConnection() throws SQLException {
-        String status = null;
-        String userStatut = "Select statut from user where ( userNumEtu = '"+TexfieldIdentifiant.getText()+
-                "' OR userMail = '"+TexfieldIdentifiant.getText()+"' ) AND password = '"+PasswordField.getText()+"'";
-        st = cn.createStatement();
-        ResultSet resultSetStatut = st.executeQuery(userStatut);
-        while (resultSetStatut.next()) {
-            status = resultSetStatut.getString("statut");
-        }
-        return status;
-    }
-
 }
