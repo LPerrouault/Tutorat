@@ -1,5 +1,6 @@
-package Database;
+package Login;
 
+import Database.DatabaseInteraction;
 import User.EtuInterfaceController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +26,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-class LoginController implements  Initializable {
+public class LoginController implements  Initializable {
 
 
     @FXML

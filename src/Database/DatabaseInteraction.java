@@ -25,7 +25,7 @@ public class DatabaseInteraction {
     public void validationLogin(String identifiant, String password) {
         //Connection a la Base de donnée
         //Preparation de la requête
-        String verifyLogin = "Select count(1) from user where ( userNumEtu = '"+identifiant+
+        String verifyLogin = "Select distinct from user where ( userNumEtu = '"+identifiant+
                 "' OR userMail = '"+identifiant+"' ) AND password = '"+password+"'";
         try{
             //execution de la reqête
@@ -33,9 +33,8 @@ public class DatabaseInteraction {
             ResultSet resultSet = st.executeQuery(verifyLogin);
             //verification des informatiions dans la Base
             while (resultSet.next()){
-                JFXBadge messageConnection = new JFXBadge();
                 if (resultSet.getInt(1)==1)
-                    messageConnection.setText("Connection impossible, veillez à ressayer prochainement.");
+                    System.out.println("Connection impossible, veillez à ressayer prochainement.");
             }
         } catch (Exception e){ e.printStackTrace(); e.getCause(); }
     }
@@ -52,5 +51,9 @@ public class DatabaseInteraction {
         }
         userStatut.add(statut);
         return statut;
+    }
+
+    public ArrayList<String> getUserStatut() {
+        return userStatut;
     }
 }

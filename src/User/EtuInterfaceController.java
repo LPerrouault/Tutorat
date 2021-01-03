@@ -1,5 +1,6 @@
 package User;
 
+import Menu.MenuInteraction;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
@@ -17,6 +18,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.security.Principal;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class EtuInterfaceController implements Initializable  {
@@ -29,6 +32,9 @@ public class EtuInterfaceController implements Initializable  {
     private Pane PaneEmploie, PaneInscription, PaneCours, PaneDTuteur,PaneETuteur,PaneProfile, PaneParametre;
     @FXML
     private VBox menuBar;
+
+    public EtuInterfaceController() throws SQLException, ClassNotFoundException {
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -44,30 +50,30 @@ public class EtuInterfaceController implements Initializable  {
         //choix category du menu
     public void menuCategory(ActionEvent event) throws IOException {
             //Emploie du temps
-            if (event.getSource() == emploieDuTempsCategory){
+            if (event.getSource().equals(emploieDuTempsCategory)){
                 PaneEmploie.toFront();
             }
             //inscription a un cours
-            else if (event.getSource() == inscriptionCategory ){
+            else if (event.getSource().equals(inscriptionCategory) ){
                 PaneInscription.toFront();
             }
             //Mes Cours
-            else if (event.getSource() == mesCoursCategory){
+            else if (event.getSource().equals(mesCoursCategory)){
                 PaneCours.toFront();
             }
             //Devenir Tuteur
-            else if (event.getSource() == devenirTuteurCategory){
+            else if (event.getSource().equals(devenirTuteurCategory)){
                 PaneDTuteur.toFront();
             }
             //Profil
-            else if (event.getSource() == profileButton) {
+            else if (event.getSource().equals(profileButton)) {
                 PaneProfile.toFront();
             }
             //Paramettre
-            else if (event.getSource() == parametreButton){
+            else if (event.getSource().equals(parametreButton)){
             }
             //Deconnection de la session
-            else if (event.getSource() == deconnectionButton ) {
+            else if (event.getSource().equals(deconnectionButton) ) {
                 Parent root = FXMLLoader.load(getClass().getResource("../Interface/login.fxml"));
                 Stage window =(Stage) deconnectionButton.getScene().getWindow();
                 window.setScene( new Scene(root,600, 500));

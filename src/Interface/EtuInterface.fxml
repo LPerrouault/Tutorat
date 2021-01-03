@@ -7,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -15,14 +14,14 @@
    <left>
       <AnchorPane prefHeight="697.0" prefWidth="283.0" style="-fx-background-color: #F8F8FF;">
          <children>
-            <AnchorPane prefHeight="700.0" prefWidth="283.0" style="-fx-background-color: #47525c;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="700.0" prefWidth="247.0" style="-fx-background-color: #47525c;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <ImageView fx:id="brandingImageView" fitHeight="150.0" fitWidth="200.0" layoutX="40.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../image/bd_bas_2018.png" />
                      </image>
                   </ImageView>
-                  <VBox fx:id="menuBar" layoutX="-3.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="285.0" style="-fx-background-color: #47525c;">
+                  <VBox fx:id="menuBar" layoutX="-3.0" layoutY="138.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="280.0" style="-fx-background-color: #47525c;">
                      <children>
                         <JFXButton fx:id="emploieDuTempsCategory" alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#menuCategory" prefHeight="39.0" prefWidth="240.0" style="-fx-border-radius: 20;" text="Emploie du Temps" textFill="WHITE">
                            <font>
@@ -80,7 +79,7 @@
                               <Insets left="15.0" top="15.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <Pane prefHeight="191.0" prefWidth="285.0" />
+                        <VBox fx:id="paramettreBox" prefHeight="172.0" prefWidth="280.0" />
                         <JFXButton fx:id="profileButton" alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#menuCategory" prefHeight="39.0" prefWidth="282.0" text="Profile" textFill="WHITE">
                            <font>
                               <Font name="Arial Black" size="14.0" />
@@ -132,12 +131,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="PaneInscription" layoutX="-5.0" prefHeight="700.0" prefWidth="904.0" style="-fx-background-color: blue;" />
-            <Pane fx:id="PaneDTuteur" layoutX="-7.0" prefHeight="700.0" prefWidth="914.0" style="-fx-background-color: yellow;" />
-            <Pane fx:id="PaneEmploie" layoutX="-3.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: red;" />
-            <Pane fx:id="PaneCours" layoutX="-6.0" prefHeight="700.0" prefWidth="906.0" style="-fx-background-color: green;" />
-            <Pane fx:id="PaneETuteur" prefHeight="700.0" prefWidth="918.0" style="-fx-background-color: magenta;" />
-            <Pane fx:id="PaneProfile" prefHeight="700.0" prefWidth="918.0" style="-fx-background-color: purple;" />
+            <VBox fx:id="PaneEmploie" layoutX="-3.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: red;" />
+            <VBox fx:id="PaneInscription" layoutX="-3.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: blue;" />
+            <VBox fx:id="PaneCours" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: green;" />
+            <VBox fx:id="PaneDTuteur" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: purple;" />
+            <VBox fx:id="PaneProfile" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: magenta;" />
          </children>
       </AnchorPane>
    </center>
