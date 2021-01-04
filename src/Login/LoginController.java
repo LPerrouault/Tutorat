@@ -28,7 +28,6 @@ import java.util.ResourceBundle;
 
 public class LoginController implements  Initializable {
 
-
     @FXML
     private javafx.scene.control.Label messageConnection;
     @FXML
