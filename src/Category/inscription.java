@@ -1,4 +1,8 @@
 package Category;
 
-public class inscription {
+import javafx.fxml.Initializable;
+
+
+public class inscription   {
+
 }
