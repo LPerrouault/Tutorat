@@ -81,6 +81,22 @@
                         <Insets left="15.0" top="10.0" />
                      </padding>
                   </Label>
+                  <Label prefHeight="37.0" prefWidth="900.0" text="Filière :">
+                     <font>
+                        <Font name="Arial Bold" size="21.0" />
+                     </font>
+                     <padding>
+                        <Insets left="15.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="labelFiliere" prefHeight="39.0" prefWidth="900.0">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="15.0" top="10.0" />
+                     </padding>
+                  </Label>
                   <Label prefHeight="37.0" prefWidth="900.0" text="Statut :">
                      <font>
                         <Font name="Arial Bold" size="21.0" />

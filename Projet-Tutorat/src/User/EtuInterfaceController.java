@@ -2,6 +2,8 @@ package User;
 
 import com.jfoenix.controls.JFXButton;
 
+import com.sun.xml.internal.ws.api.ResourceLoader;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,7 +27,8 @@ public class EtuInterfaceController implements Initializable  {
     private ImageView brandingImageView;
     @FXML
     private BorderPane etuHome;
-
+    @FXML
+    JFXButton deconnectionButton;
     @FXML
     private VBox PaneEmploie, PaneInscription, PaneCours, PaneDTuteur,PaneProfile, PaneParametre;
     @FXML
@@ -72,53 +75,33 @@ public class EtuInterfaceController implements Initializable  {
         loadCat("devenirTuteur");
     }
 
-    public void profilCat(MouseEvent mouseEvent) {
-        loadCat("profile");
-    }
+    public void profilCat(MouseEvent mouseEvent) { loadCat("profile"); }
 
     public void paramettreCat(MouseEvent mouseEvent) {
+
         loadCat("paramettre");
     }
 
     public void deconectionBTN(MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../Interface/login.fxml"));
-        JFXButton deconnectionButton = new JFXButton();
-        Stage window =(Stage) deconnectionButton.getScene().getWindow();
-        window.setScene( new Scene(root,600, 500));
+        Stage stage = (Stage) deconnectionButton.getScene().getWindow();
+        stage.close();
+        Platform.runLater(() -> {
+                    try {
+                        new FXMLLoader().load(getClass().getResource("../Interface/login.fxml"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
+
     }
 
-//        //choix category du menu
-//    public void menuCategory(javafx.scene.input.MouseEvent event) throws IOException {
-//            //Emploie du temps
-//            if (event.getSource().equals(emploieDuTempsCategory)){
-//                PaneEmploie.toFront();
-//            }
-//            //inscription a un cours
-//            else if (event.getSource().equals(inscriptionCategory) ){
-//                PaneInscription.toFront();
-//            }
-//            //Mes Cours
-//            else if (event.getSource().equals(mesCoursCategory)){
-//                PaneCours.toFront();
-//            }
-//            //Devenir Tuteur
-//            else if (event.getSource().equals(devenirTuteurCategory)){
-//                PaneDTuteur.toFront();
-//            }
-//            //Profil
-//            else if (event.getSource().equals(profileButton)) {
-//                PaneProfile.toFront();
-//            }
-//            //Paramettre
-//            else if (event.getSource().equals(parametreButton)){
-//                PaneParametre.toFront();
-//            }
-//            //Deconnection de la session
-//            else if (event.getSource().equals(deconnectionButton) ) {
-//                Parent root = FXMLLoader.load(getClass().getResource("../Interface/login.fxml"));
-//                Stage window =(Stage) deconnectionButton.getScene().getWindow();
-//                window.setScene( new Scene(root,600, 500));
-//            }
+//    public void deconectionBTN(MouseEvent mouseEvent) throws IOException {
+//        Parent root = FXMLLoader.load(getClass().getResource("../Interface/login.fxml"));
+//        JFXButton deconnectionButton = new JFXButton();
+//        Stage window =(Stage) deconnectionButton.getScene().getWindow();
+//        window.setScene( new Scene(root,600, 500));
 //    }
+
 
 }

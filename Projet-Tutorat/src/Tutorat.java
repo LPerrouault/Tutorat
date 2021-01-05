@@ -6,6 +6,9 @@ import javafx.stage.Stage;
 
 public class Tutorat extends Application {
 
+    public Tutorat() {
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Interface/login.fxml"));
