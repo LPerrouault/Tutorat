@@ -24,6 +24,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements  Initializable {
 
+
     @FXML
     private javafx.scene.control.Label messageConnection;
     @FXML
@@ -62,7 +63,7 @@ public class LoginController implements  Initializable {
                 switch (dataInterac.getStatutConnection(TexfieldIdentifiant.getText(),PasswordField.getText())) {
                     case "Etudiant": {
                         //interface Etudiant
-                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/UserSpace/EtuInterface.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/userSpace/EtuInterface.fxml"));
                         Stage window = (Stage) loginButton.getScene().getWindow();
                         window.setScene(new Scene(root, 1180, 700));
                     }
@@ -70,7 +71,7 @@ public class LoginController implements  Initializable {
 
                     case "EtudiantTuteur": {
                         //Interface Etudiant Tuteur
-                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/UserSpace/EtuTutInterface.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/userSpace/EtuTutInterface.fxml"));
                         Stage window = (Stage) loginButton.getScene().getWindow();
                         window.setScene(new Scene(root, 1180, 700));
                     }
@@ -78,17 +79,14 @@ public class LoginController implements  Initializable {
 
                     case "Tuteur": {
                         //Interface Tuteur
-                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/UserSpace/TuteurInterface.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("../Interface/userSpace/TuteurInterface.fxml"));
                         Stage window = (Stage) loginButton.getScene().getWindow();
                         window.setScene(new Scene(root, 1180, 700));
                     }
                 }
             } else {
                 //erreur la verification a echoué
-                messageConnection.setText("Aucune information donné ");
-                FXMLLoader.load(getClass().getResource("../Interface/login.fxml"));
+                messageConnection.setText("Mots de passe ou identifiant invalide");
             }
     }
-
-
 }
