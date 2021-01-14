@@ -3,6 +3,7 @@ package Database;
 import com.jfoenix.controls.JFXBadge;
 import javafx.fxml.FXMLLoader;
 
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,10 +12,15 @@ public class DatabaseInteraction {
     private Connection cn=null;
      Statement st = null;
      ResultSet rs = null;
+     //detaille Connection Database sur Gooogle Cloud
     String databaseName = "projettutorat";
     String databaseUser = "root";
     String databasePassword = "";
     String url = "jdbc:mysql://localhost/"+databaseName;
+
+
+
+
     private  static  ArrayList<String> user = new ArrayList<String>();;
 
     public DatabaseInteraction() throws SQLException, ClassNotFoundException {

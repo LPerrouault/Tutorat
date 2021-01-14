@@ -1,2 +1,5 @@
-package fun;public class test {
+package fun;
+
+public class test {
+    //fgvbdygvzbyvbazydvbyatvzbdytavbdytazvdyavdvadg
 }
