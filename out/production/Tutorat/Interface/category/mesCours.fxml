@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="etuHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.mesCours">
+   <right>
+      <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Mes fun.Cours">
+               <font>
+                  <Font name="Arial Black" size="44.0" />
+               </font>
+            </Label>
+            <VBox fx:id="CoursListe" prefHeight="585.0" prefWidth="900.0">
+               <children>
+                  <VBox fx:id="VboxCoursList" prefHeight="360.0" prefWidth="873.0" style="-fx-border-color: #47525c; -fx-border-radius: 10;">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="645.0" text="&gt; Matière :">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="nommMtiere" prefHeight="17.0" prefWidth="645.0">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="645.0" text="&gt; Date :">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="nomDate" prefHeight="17.0" prefWidth="645.0">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="645.0" text="&gt; Salle : ">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="nomSalle" prefHeight="17.0" prefWidth="645.0">
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="645.0" text="Descriptif :">
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </Label>
+                        <Text fx:id="descriptif" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="720.13671875">
+                           <VBox.margin>
+                              <Insets left="70.0" top="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="59.0" prefWidth="900.0">
+                           <children>
+                              <JFXButton onMouseClicked="#ChangeCreneaux" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #ff8c00;" text="Changer créneaux" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="40.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton onMouseClicked="#desinscrire" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #ff8c00;" text="Me désinscrire" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets left="40.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Arial Black" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets left="80.0" right="40.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

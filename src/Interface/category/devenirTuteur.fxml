@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="etuHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.devenirTuteur">
+   <right>
+      <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Devenir Tuteur">
+               <font>
+                  <Font name="Arial Black" size="44.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="586.0" prefWidth="900.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous aimer partager et enseigner, vous pouvez devenir étudiant enseignant." wrappingWidth="700.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="85.0" top="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre mission est simple, enseigner la matière qui vous plaît aux étudiants afin de les aider dans leur étude." wrappingWidth="700.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="85.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous assurez les leçons par des tutorats, dont vous pouvez choisir l'horaire qui vous correspond." wrappingWidth="700.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="85.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez plus ne participez pas de panique vous pouvais vous désister a tous moment." wrappingWidth="700.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="85.0" top="5.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Pane prefHeight="70.0" prefWidth="900.0" />
+                  <BorderPane prefHeight="162.0" prefWidth="900.0">
+                     <center>
+                        <JFXButton fx:id="buttonEngager" onAction="#BtnEngager" prefHeight="60.0" prefWidth="220.0" style="-fx-background-color: #ff8c00; -fx-background-radis: 10;" text="S'engager" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="19.0" />
+                           </font>
+                        </JFXButton>
+                     </center>
+                     <top>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="901.0" text="Après votre engagement vous devrait redémarrer votre session." textFill="#514c4c" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Arial Italic" size="18.0" />
+                           </font>
+                        </Label>
+                     </top>
+                  </BorderPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
