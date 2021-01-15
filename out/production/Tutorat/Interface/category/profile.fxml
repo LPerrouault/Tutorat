@@ -30,7 +30,7 @@
                         </Label>
                         <Label fx:id="labelNumEtu" prefHeight="37.0" prefWidth="906.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />
@@ -48,9 +48,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="labelNom" prefHeight="37.0" prefWidth="900.0">
+                        <Label fx:id="labelNom" prefHeight="37.0" prefWidth="1137.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />
@@ -68,9 +68,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="labelPrenom" prefHeight="37.0" prefWidth="681.0">
+                        <Label fx:id="labelPrenom" prefHeight="37.0" prefWidth="882.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />
@@ -88,9 +88,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="labelMail" prefHeight="39.0" prefWidth="900.0">
+                        <Label fx:id="labelMail" prefHeight="39.0" prefWidth="976.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />
@@ -108,9 +108,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="labelFiliere" prefHeight="39.0" prefWidth="900.0">
+                        <Label fx:id="labelFiliere" prefHeight="39.0" prefWidth="1115.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />
@@ -128,9 +128,9 @@
                               <Insets left="15.0" top="10.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="labelStatut" prefHeight="39.0" prefWidth="900.0">
+                        <Label fx:id="labelStatut" prefHeight="39.0" prefWidth="1119.0">
                            <font>
-                              <Font name="Arial" size="18.0" />
+                              <Font name="Arial Black" size="18.0" />
                            </font>
                            <padding>
                               <Insets left="15.0" top="10.0" />

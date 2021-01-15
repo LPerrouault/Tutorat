@@ -20,131 +20,91 @@
                   <Font name="Arial Black" size="44.0" />
                </font>
             </Label>
-            <HBox prefHeight="26.0" prefWidth="900.0">
+            <HBox prefHeight="562.0" prefWidth="900.0">
                <children>
-                  <Pane prefHeight="26.0" prefWidth="65.0" />
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="118.0" text="Lundi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="116.0" text="Mardi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="116.0" text="Mercredi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="116.0" text="Jeudi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="106.0" prefWidth="116.0" text="Vendredi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="106.0" prefWidth="116.0" text="Samedi">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="116.0" text="Dimanche">
-                     <padding>
-                        <Insets right="5.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox prefHeight="493.0" prefWidth="900.0">
-               <children>
-                  <VBox prefHeight="396.0" prefWidth="90.0">
+                  <VBox prefHeight="562.0" prefWidth="55.0">
                      <children>
-                        <Pane prefHeight="28.0" prefWidth="63.0" />
+                        <Pane prefHeight="52.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="3.0" prefWidth="63.0" text="8h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="22.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="7.0" prefWidth="63.0" text="9h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="21.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="16.0" prefWidth="63.0" text="10h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="22.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="11.0" prefWidth="63.0" text="11h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="13.0" prefWidth="63.0" text="12h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="6.0" prefWidth="63.0" text="13h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="18.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="63.0" text="14h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="21.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="10.0" prefWidth="63.0" text="15h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="20.0" prefWidth="63.0" />
+                        <Pane prefHeight="23.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="63.0" text="16h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="23.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="63.0" text="17h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="19.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="63.0" text="18h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="22.0" prefWidth="63.0" />
+                        <Pane prefHeight="24.0" prefWidth="55.0" />
                         <Label alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="63.0" text="19h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
-                        <Pane prefHeight="12.0" prefWidth="63.0" />
-                        <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="63.0" text="20h">
+                        <Pane prefHeight="29.0" prefWidth="55.0" />
+                        <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="63.0" text="20h">
                            <padding>
                               <Insets right="5.0" />
                            </padding>
                         </Label>
                      </children>
                   </VBox>
-                  <GridPane prefHeight="481.0" prefWidth="845.0" style="-fx-border-color: black; -fx-grid-lines-visible: true;">
+                  <GridPane prefHeight="531.0" prefWidth="806.0" style="-fx-border-color: black; -fx-grid-lines-visible: true;">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" />
@@ -155,6 +115,19 @@
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="0.0" />
                     </columnConstraints>
                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -167,13 +140,69 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
+                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="115.0" style="-fx-background-color: #468CE0;" text="Lundi" textFill="WHITE">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="64.0" prefWidth="115.0" style="-fx-background-color: #468CE0;" text="Mercredi" textFill="WHITE" GridPane.columnIndex="2">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="106.0" prefWidth="116.0" style="-fx-background-color: #468CE0;" text="Vendredi" textFill="WHITE" GridPane.columnIndex="4">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="46.0" prefWidth="114.0" style="-fx-background-color: #468CE0;" text="Dimanche" textFill="WHITE" GridPane.columnIndex="6">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="106.0" prefWidth="116.0" style="-fx-background-color: #468CE0;" text="Samedi" textFill="WHITE" GridPane.columnIndex="5">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="69.0" prefWidth="115.0" style="-fx-background-color: #468CE0;" text="Jeudi" textFill="WHITE" GridPane.columnIndex="3">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="57.0" prefWidth="115.0" style="-fx-background-color: #468CE0;" text="Mardi" textFill="WHITE" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
                      </children>
                   </GridPane>
                </children>

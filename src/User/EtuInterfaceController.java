@@ -83,17 +83,7 @@ public class EtuInterfaceController implements Initializable  {
     }
 
     public void deconectionBTN(MouseEvent mouseEvent) throws IOException {
-        Stage stage = (Stage) deconnectionButton.getScene().getWindow();
-        stage.close();
-        Platform.runLater(() -> {
-                    try {
-                        new FXMLLoader().load(getClass().getResource("../Interface/login.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-        );
-
+        Parent root = new FXMLLoader().load(getClass().getResource("../Interface/login.fxml"));
     }
 
 }

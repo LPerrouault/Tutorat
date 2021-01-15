@@ -1,6 +1,7 @@
 package fun;
 
 import Database.DatabaseConection;
+import com.zaxxer.hikari.HikariConfig;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,9 +15,6 @@ import java.util.List;
 public class UserQueries {
 	
 	private Connection cn;
-	
-	
-	
 
 	public UserQueries(String u,String l,String p) throws  SQLException, ClassNotFoundException {
 		this.cn = DatabaseConection.getInstance(u, l, p);

@@ -13,7 +13,7 @@
    <right>
       <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Mes fun.Cours">
+            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Mes Cours">
                <font>
                   <Font name="Arial Black" size="44.0" />
                </font>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
@@ -20,47 +19,29 @@
             </Label>
             <HBox prefHeight="215.0" prefWidth="907.0">
                <children>
-                  <JFXButton onAction="#emploieDuTempsRedirection">
-                     <graphic>
-                        <VBox prefHeight="200.0" prefWidth="280.0" style="-fx-border-color: #47525c; -fx-border-radius: 20;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" text="Emploie Du Temps" />
-                              <FontAwesomeIconView glyphName="CALENDAR" size="80" wrappingWidth="80.1428575515747">
-                                 <VBox.margin>
-                                    <Insets left="100.0" right="80.0" top="30.0" />
-                                 </VBox.margin>
-                              </FontAwesomeIconView>
-                           </children>
-                        </VBox>
-                     </graphic>
+                  <JFXButton onMouseClicked="#emploieDuTempsRedirection" prefHeight="48.0" prefWidth="230.0" style="-fx-border-color: black;" text="emploie du Temps">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
                   </JFXButton>
-                  <JFXButton onAction="#mesCoursRedirection">
-                     <graphic>
-                        <VBox prefHeight="200.0" prefWidth="280.0" style="-fx-border-color: #47525c; -fx-border-radius: 20;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" text="Mes fun.Cours" />
-                              <FontAwesomeIconView glyphName="BOOK" size="80" wrappingWidth="80.1428575515747">
-                                 <VBox.margin>
-                                    <Insets left="100.0" right="80.0" top="30.0" />
-                                 </VBox.margin>
-                              </FontAwesomeIconView>
-                           </children>
-                        </VBox>
-                     </graphic>
+                  <JFXButton onMouseClicked="#mesCoursRedirection" prefHeight="48.0" prefWidth="230.0" style="-fx-border-color: black;" text="Mes cours">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
                   </JFXButton>
-                  <JFXButton onMouseClicked="#ChoisirCreneaux">
-                     <graphic>
-                        <VBox prefHeight="200.0" prefWidth="280.0" style="-fx-border-color: #47525c; -fx-border-radius: 20;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="280.0" text="Choisir Créneaux" />
-                              <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="80" wrappingWidth="80.2857141494751">
-                                 <VBox.margin>
-                                    <Insets left="100.0" right="80.0" top="30.0" />
-                                 </VBox.margin>
-                              </FontAwesomeIconView>
-                           </children>
-                        </VBox>
-                     </graphic>
+                  <JFXButton onMouseClicked="#ChoisirCreneaux" prefHeight="48.0" prefWidth="230.0" style="-fx-border-color: black;" text="Choix créneaux">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
                   </JFXButton>
                </children>
             </HBox>

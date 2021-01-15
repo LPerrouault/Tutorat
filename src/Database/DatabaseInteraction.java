@@ -1,14 +1,18 @@
 package Database;
 
 import com.jfoenix.controls.JFXBadge;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import com.zaxxer.hikari.pool.HikariPool;
 import javafx.fxml.FXMLLoader;
 
 
+import javax.activation.DataSource;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class DatabaseInteraction {
+public class DatabaseInteraction  {
     private Connection cn=null;
      Statement st = null;
      ResultSet rs = null;
@@ -16,15 +20,33 @@ public class DatabaseInteraction {
     String databaseName = "projettutorat";
     String databaseUser = "root";
     String databasePassword = "";
-    String url = "jdbc:mysql://localhost/"+databaseName;
+    String localConnection = "jdbc:mysql://localhost/"+databaseName;
 
+/*    String CloudDatabasePassword = "B0wNnxtzA0DiyEbo";
+    String CloudSQLConnection = "progibdgl-tutorat:europe-west1:progtutorat";
 
+    private DataSource createConnection(){
+        // The configuration object specifies behaviors for the connection pool.
+        final HikariDataSource config = new HikariDataSource();
+        // Configure which instance and what database user to connect with.
+        config.setJdbcUrl(String.format("jdbc:mysql:///%s", databaseName));
+        config.setUsername(databaseUser); // e.g. "root", "postgres"
+        config.setPassword(CloudDatabasePassword); // e.g. "my-password"
 
+        // For Java users, the Cloud SQL JDBC Socket Factory can provide authenticated connections.
+        config.addDataSourceProperty("socketFactory", "com.google.cloud.sql.mysql.SocketFactory");
+        config.addDataSourceProperty("cloudSqlInstance", CloudSQLConnection);
+        config.addDataSourceProperty("useSSL", "false");
+
+        // Initialize the connection pool using the configuration object.
+        DataSource pool = (DataSource) new HikariDataSource(config);
+        return pool;
+    }*/
 
     private  static  ArrayList<String> user = new ArrayList<String>();;
 
     public DatabaseInteraction() throws SQLException, ClassNotFoundException {
-        cn = DatabaseConection.getInstance(url, databaseUser,databasePassword);
+        cn = DatabaseConection.getInstance(localConnection, databaseUser,databasePassword);
     }
 
     public void validationLogin(String identifiant, String password) {

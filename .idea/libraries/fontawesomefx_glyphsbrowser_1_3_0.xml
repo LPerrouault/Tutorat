@@ -15,6 +15,9 @@
       <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-fontawesome-4.7.0-5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-commons-8.15.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/controlsfx-8.40.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/HikariCP-3.4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-2.0.0-alpha1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/HikariCP-2.4.2-RC2+SquidSolutions.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

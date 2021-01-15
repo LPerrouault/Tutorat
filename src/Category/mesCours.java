@@ -23,9 +23,10 @@ public class mesCours implements Initializable {
     }
 
 
-    public void ChangeCreneaux(MouseEvent mouseEvent) {
+    public void desinscrire(MouseEvent mouseEvent) {
+
     }
 
-    public void desinscrire(MouseEvent mouseEvent) {
+    public void modifierCreneaux(MouseEvent mouseEvent) {
     }
 }
