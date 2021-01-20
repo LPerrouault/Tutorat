@@ -1,22 +1,45 @@
 package fun;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Cours {
  
 	private int idCours;
 	private String nom;
 	private Date date;
+	private String heur;
 	private String salle;
 	private int NbreElevMax;
 	private String descriptif;
 	private int idMatiere;
-	
-	
+	public ArrayList<String> courList;
+
+
 	public Cours() {
-		
+
+		this.idCours = idCours;
+		this.nom = nom;
+		this.date = date;
+		this.salle = salle;
+		this.NbreElevMax = NbreElevMax;
+		this.descriptif = descriptif;
+		this.idMatiere = idMatiere;
+		courList= new ArrayList<>();
+		courList.add(String.valueOf(getIdCours()));
+		courList.add(getNom());
+		courList.add(String.valueOf(getDate()));
+		courList.add(getHeur());
+		courList.add(getSalle());
 	}
 
+	public String getHeur() {
+		return heur;
+	}
+
+	public void setHeur(String heur) {
+		this.heur = heur;
+	}
 
 	public int getIdCours() {
 		return idCours;
@@ -87,4 +110,16 @@ public class Cours {
 		this.idMatiere = idMatiere;
 	}
 
+	@Override
+	public String toString() {
+		return "Cours{" +
+				"idCours=" + idCours +
+				", nom='" + nom + '\'' +
+				", date=" + date +
+				", salle='" + salle + '\'' +
+				", NbreElevMax=" + NbreElevMax +
+				", descriptif='" + descriptif + '\'' +
+				", idMatiere=" + idMatiere +
+				'}';
+	}
 }

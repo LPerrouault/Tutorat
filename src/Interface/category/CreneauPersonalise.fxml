@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="etuHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.creneauPerso">
+<BorderPane fx:id="Home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.creneauPerso">
    <right>
-      <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Créneau Personalisé">
                <font>
@@ -33,7 +33,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="Cname" prefHeight="25.0" prefWidth="230.0" />
+                        <TextField fx:id="Cname" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" />
@@ -46,7 +46,15 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="Cmatiere" prefHeight="25.0" prefWidth="230.0" />
+                        <TextField fx:id="Cmatiere" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                        <Label fx:id="errorLabel" prefHeight="25.0" prefWidth="443.0" textFill="RED">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" />
@@ -59,7 +67,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="Cdate" prefHeight="25.0" prefWidth="177.0" />
+                        <DatePicker fx:id="Cdate" prefHeight="25.0" prefWidth="172.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -91,7 +99,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="Csalle" prefHeight="25.0" prefWidth="230.0" />
+                        <TextField fx:id="Csalle" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -107,7 +115,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="CnbEleve" prefHeight="25.0" prefWidth="51.0" />
+                        <TextField fx:id="CnbEleve" prefHeight="25.0" prefWidth="51.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
                      </children>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -116,7 +124,7 @@
                         <Insets left="20.0" right="20.0" />
                      </padding>
                   </HBox>
-                  <TextArea fx:id="Cdescriptif" prefHeight="158.0" prefWidth="775.0" promptText="Descriptif (optionel)">
+                  <TextArea fx:id="Cdescriptif" prefHeight="158.0" prefWidth="775.0" promptText="Descriptif (optionel)" style="-fx-border-color: #47525c; -fx-border-width: 0.7;">
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" top="10.0" />
                      </VBox.margin>

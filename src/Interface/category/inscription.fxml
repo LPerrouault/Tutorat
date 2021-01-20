@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="etuHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.inscription">
+<BorderPane fx:id="Home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.inscription">
    <right>
       <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <children>
@@ -14,6 +17,23 @@
                   <Font name="Arial Black" size="44.0" />
                </font>
             </Label>
+            <VBox prefHeight="525.0" prefWidth="900.0">
+               <children>
+                  <HBox prefHeight="503.0" prefWidth="900.0">
+                     <children>
+                        <MenuButton fx:id="menuMatiere" mnemonicParsing="false" prefHeight="25.0" prefWidth="225.0" text="Matiére :" />
+                        <VBox prefHeight="503.0" prefWidth="725.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </VBox>
          </children>
       </VBox>
    </right>

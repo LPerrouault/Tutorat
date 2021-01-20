@@ -1,19 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="etuHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.creneauPerso">
+<BorderPane fx:id="Home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Category.creneauPerso">
    <right>
-      <VBox prefHeight="700.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Paramêtre">
+            <Label alignment="CENTER" prefHeight="115.0" prefWidth="897.0" text="Créneau Personalisé">
                <font>
                   <Font name="Arial Black" size="44.0" />
                </font>
             </Label>
+            <VBox prefHeight="541.0" prefWidth="800.0" style="-fx-border-color: #696969; -fx-border-radius: 20;">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+               <children>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="121.0" text="Nom du Cours :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="Cname" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="68.0" text="Matiére :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="Cmatiere" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                        <Label fx:id="errorLabel" prefHeight="25.0" prefWidth="443.0" textFill="RED">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="50.0" text="Date :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="Cdate" prefHeight="25.0" prefWidth="172.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="61.0" text="Heur :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXTimePicker fx:id="Ctime" prefHeight="25.0" prefWidth="153.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="68.0" text="Salle :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="Csalle" prefHeight="25.0" prefWidth="230.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="36.0" prefWidth="780.0">
+                     <children>
+                        <Label fx:id="CnbEleves" prefHeight="25.0" prefWidth="131.0" text="Nombre d'éleves :">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="CnbEleve" prefHeight="25.0" prefWidth="51.0" style="-fx-border-color: #47525c; -fx-border-width: 0.7;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
+                  <TextArea fx:id="Cdescriptif" prefHeight="158.0" prefWidth="775.0" promptText="Descriptif (optionel)" style="-fx-border-color: #47525c; -fx-border-width: 0.7;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <JFXButton onMouseClicked="#CrenaeauAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #ff8c00; fx-border-r: 20;" text="Valider" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="330.0" top="30.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
          </children>
       </VBox>
    </right>

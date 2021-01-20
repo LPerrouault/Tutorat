@@ -35,10 +35,12 @@ public class profile implements Initializable {
     String resultPrenom = databaseInteraction.DatabaseRequest(reqPrenom, "userPrenom");
     String reqMail = "SELECT usermail FROM user where userNumetu="+user+" or userMail ="+user;
     String resultMail = databaseInteraction.DatabaseRequest(reqMail, "userMail");
-    String reqfiliere = "SELECT userFiliere FROM user where userNumetu="+user+" or userMail ="+user;
-    String resultFiliere = databaseInteraction.DatabaseRequest(reqfiliere, "userFiliere");
     String reqStatut = "SELECT statut FROM user where userNumetu="+user+" or userMail ="+user;
     String resultStatut = databaseInteraction.DatabaseRequest(reqStatut, "statut");
+    String reqfiliere = "SELECT filiere.nom FROM filiere\n" +
+            "INNER JOIN user  ON user.idFiliere=filiere.idFiliere\n" +
+            "WHERE user.userNumEtu=\""+user+"\" OR user.userMail=\""+user+"\"";
+    String resultFiliere = databaseInteraction.DatabaseRequest(reqfiliere, "nom");
 
     public profile() throws SQLException, ClassNotFoundException {
 //        user = databaseInteraction.lastUserConnected();

@@ -1,6 +1,7 @@
 package User;
 
 import com.jfoenix.controls.JFXButton;
+import fun.CommunFunction;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,11 +26,11 @@ public class EtuTutInterfaceController implements Initializable {
     @FXML
     private ImageView brandingImageView;
     @FXML
-    BorderPane etuHome;
+    BorderPane Home;
     @FXML
     JFXButton deconnectionButton;
     @FXML
-    private JFXButton emploieDuTempsCategory,inscriptionCategory, mesCoursCategory, devenirTuteurCategory,espaceTuteurCategory;;
+    private JFXButton emploieDuTempsCategory,inscriptionCategory, mesCoursCategory, devenirTuteurCategory,espaceTuteurCategory;
     @FXML
     private VBox PaneEmploie, PaneInscription, PaneCours, PaneDTuteur,PaneProfile, PaneParametre;
 
@@ -48,7 +49,7 @@ public class EtuTutInterfaceController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        etuHome.setCenter(root);
+        Home.setCenter(root);
     }
 
     public void EDTCat(MouseEvent mouseEvent) {
@@ -76,14 +77,12 @@ public class EtuTutInterfaceController implements Initializable {
     }
 
     public void deconectionBTN(MouseEvent mouseEvent) throws IOException {
+        CommunFunction function = new CommunFunction();
         Stage stage = (Stage) deconnectionButton.getScene().getWindow();
         stage.close();
         Platform.runLater(() -> {
-                    try {
-                        new FXMLLoader().load(getClass().getResource("../Interface/login.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    String login = "../Interface/login.fxml";
+                    Parent root = function.loadFXMLFills(login);
                 }
         );
 

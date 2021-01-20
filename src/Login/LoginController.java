@@ -69,7 +69,7 @@ public class LoginController implements  Initializable {
                     }
                     break;
 
-                    case "EtudiantTuteur": {
+                    case "Etudiant-Tuteur": {
                         //Interface Etudiant Tuteur
                         Parent root = FXMLLoader.load(getClass().getResource("../Interface/userSpace/EtuTutInterface.fxml"));
                         Stage window = (Stage) loginButton.getScene().getWindow();

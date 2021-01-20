@@ -23,7 +23,7 @@ public class TuteurInterfaceController implements Initializable {
     @FXML
     private ImageView brandingImageView;
     @FXML
-    BorderPane tutHome;
+    BorderPane Home;
     @FXML
     JFXButton deconnectionButton;
 
@@ -45,7 +45,7 @@ public class TuteurInterfaceController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        tutHome.setCenter(root);
+        Home.setCenter(root);
     }
 
     public void EDTCat(MouseEvent mouseEvent) {

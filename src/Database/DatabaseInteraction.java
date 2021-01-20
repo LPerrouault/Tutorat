@@ -17,7 +17,7 @@ public class DatabaseInteraction  {
      Statement st = null;
      ResultSet rs = null;
      //detaille Connection Database sur Gooogle Cloud
-    String databaseName = "projettutorat";
+    String databaseName = "tutorat";
     String databaseUser = "root";
     String databasePassword = "";
     String localConnection = "jdbc:mysql://localhost/"+databaseName;
@@ -43,7 +43,8 @@ public class DatabaseInteraction  {
         return pool;
     }*/
 
-    private  static  ArrayList<String> user = new ArrayList<String>();;
+    private  static  ArrayList<String> user = new ArrayList<String>();
+    private ArrayList<String> userStatut = new ArrayList<>();
 
     public DatabaseInteraction() throws SQLException, ClassNotFoundException {
         cn = DatabaseConection.getInstance(localConnection, databaseUser,databasePassword);
@@ -62,13 +63,12 @@ public class DatabaseInteraction  {
             //verification des informatiions dans la Base
             while (rs.next()){
                 if (rs.getInt(1)==1) {
-                    System.out.println("Connection impossible, veillez à ressayer prochainement." + user.get(0));
                 }
             }
         } catch (Exception e){ e.printStackTrace(); e.getCause(); }
     }
 
-    //Statue de l'utilisateur pour rediriger vers le bon interface
+    //Statue de l'utilisateur pour rediriger vers le bon espace d'affichage
     public String getStatutConnection(String identifiant, String password) throws SQLException, IOException {
         String statut = null;
         String req = "SELECT statut FROM user WHERE ( userNumEtu = '"+identifiant+
@@ -77,6 +77,7 @@ public class DatabaseInteraction  {
         rs = st.executeQuery(req);
         while (rs.next()) {
             statut = rs.getString("statut");
+            lastUserStatut(statut);
         }
         return statut;
     }
@@ -92,8 +93,10 @@ public class DatabaseInteraction  {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
         return result;
     }
+
 
     public void DatabaseUpdate(String req) throws SQLException {
         try {
@@ -109,6 +112,8 @@ public class DatabaseInteraction  {
     public void lastUser(String u){
         user.add(u);
     }
+
+    public void  lastUserStatut(String u){ userStatut.add(u);}
 
     public  String lastUserConnected(){
         return user.get(user.size()-1);

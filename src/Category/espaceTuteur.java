@@ -2,12 +2,17 @@ package Category;
 
 import Database.DatabaseInteraction;
 import User.EtuInterfaceController;
+import com.jfoenix.controls.JFXButton;
 import fun.CommunFunction;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +21,11 @@ import java.util.ResourceBundle;
 
 
 public class espaceTuteur {
+    @FXML
+    BorderPane Home;
+    @FXML
+    private VBox CcreneauxVbox;
+
     CommunFunction function;
 
     public espaceTuteur() {
@@ -23,24 +33,22 @@ public class espaceTuteur {
     }
 
     public void emploieDuTempsRedirection(MouseEvent mouseEvent) throws IOException {
-       /* String emploieDuTemps = "../Interface/category/emploieDuTemps.fxml";
-        function.loadFXMLFills(emploieDuTemps);*/
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource("../Interface/category/emploieDuTemps.fxml"));
+        String emploieDuTemps = "../Interface/category/emploieDuTemps.fxml";
+        Parent root = function.loadFXMLFills(emploieDuTemps);
+        Home.setRight(root);
+
     }
 
     public void mesCoursRedirection(MouseEvent mouseEvent) throws IOException {
-        /*String mesCours = "../Interface/category/mesCours.fxml";
-        function.loadFXMLFills(mesCours);*/
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource("../Interface/category/mesCours.fxml"));
+        String mesCours = "../Interface/category/mesCours.fxml";
+        Parent root = function.loadFXMLFills(mesCours);
+        Home.setRight(root);
     }
 
     public void ChoisirCreneaux(MouseEvent mouseEvent) throws IOException {
-        /*String choixCreneaux = ;
-        function.loadFXMLFills(choixCreneaux);*/
-        Parent root;
-        root = FXMLLoader.load(getClass().getResource("../Interface/category/choixCreneaux.fxml"));
+        String choixCreneaux = "../Interface/category/choixCreneaux.fxml";
+        Parent root = function.loadFXMLFills(choixCreneaux);
+        Home.setRight(root);
     }
 
     public void plusEtreTuteur(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {

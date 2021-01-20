@@ -1,6 +1,7 @@
 package fun;
 
 import Database.DatabaseConection;
+import Database.DatabaseInteraction;
 import com.zaxxer.hikari.HikariConfig;
 
 import java.sql.Connection;
@@ -13,31 +14,40 @@ import java.util.List;
 
 
 public class UserQueries {
-	
-	private Connection cn;
 
-	public UserQueries(String u,String l,String p) throws  SQLException, ClassNotFoundException {
-		this.cn = DatabaseConection.getInstance(u, l, p);
+	private Connection cn=null;
+	Statement st = null;
+	ResultSet rs = null;
+	//detaille Connection Database sur Gooogle Cloud
+	String databaseName = "tutorat";
+	String databaseUser = "root";
+	String databasePassword = "";
+	String localConnection = "jdbc:mysql://localhost/"+databaseName;
+	private DatabaseInteraction data;
+
+	public UserQueries() throws  SQLException, ClassNotFoundException {
+		cn = DatabaseConection.getInstance(localConnection, databaseUser,databasePassword);
+		data = new DatabaseInteraction();
 	}
 // Requetes communes aux �tudiants et aux tuteurs
-public List<Cours> getListeCours(String userNumEtu) throws SQLException{
+public ArrayList<Cours> getListeCours(String userNumEtu) throws SQLException{
 	
-	List<Cours> c = new ArrayList <Cours> ();
-	
-	PreparedStatement pstmt = cn.prepareStatement("SELECT C.idMatiere,C.date,C.salle,C.descriptif FROM fun.Cours C INNER JOIN S_inscrit S WHERE C.userNumEtu = ?");
-    pstmt.setString(1, userNumEtu);
-    
-    ResultSet rs = pstmt.executeQuery();
+	ArrayList<Cours> c = new ArrayList<>();
+	Cours d = new Cours ();
+
+	String req ="SELECT nom, date, salle FROM cours WHERE idResponsable ="+userNumEtu;
+	st = cn.createStatement();
+   	rs = st.executeQuery(req);
     while(rs.next()) {
-    	Cours d = new Cours ();
-    	d.setIdMatiere(rs.getInt("C.idMatiere"));
-    	d.setDate(rs.getDate("C.date"));
-    	d.setSalle(rs.getString("C.salle"));
-    	d.setDescriptif(rs.getString("C.decriptif"));
+		d.setIdCours(rs.getInt("idCours"));
+    	d.setNom(rs.getString("nom"));
+    	d.setDate(rs.getDate("date"));
+    	d.setSalle(rs.getString("salle"));
     	c.add(d);
     }
     return c;
 }
+
 public Cours findID(String id) throws SQLException {
 	
 	Cours e = new Cours();
@@ -56,6 +66,20 @@ public Cours findID(String id) throws SQLException {
 	}
 	return e;
 }
+
+	public ArrayList<String> affichageMatiere() throws SQLException {
+			String req = "SELECT matiere.nom FROM matiere\n" +
+					"INNER JOIN user ON user.idFiliere=matiere.idFiliere\n" +
+					"WHERE user.userNumEtu=\""+data.lastUserConnected()+"\"";
+			ArrayList<String> list = new ArrayList<>();
+		st = cn.createStatement();
+		rs = st.executeQuery(req);
+		while(rs.next()) {
+			String s = rs.getNString("nom");
+			list.add(s);
+		}
+		return list;
+	}
 
   public void inscrire(Cours c) throws SQLException{
 	  Inscrits s = new Inscrits();
@@ -87,7 +111,7 @@ public Cours findID(String id) throws SQLException {
 
  public void desinscrire(Cours c) throws SQLException{
       User u = new User();
-	  List<Cours> inscrits = new ArrayList<Cours> ();
+	  ArrayList<Cours> inscrits = new ArrayList<>();
 	  inscrits =getListeCours(u.getNumEtu()); 
 	 
 	  if(inscrits.contains(c)) {

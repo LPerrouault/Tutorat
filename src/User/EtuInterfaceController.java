@@ -3,6 +3,8 @@ package User;
 import com.jfoenix.controls.JFXButton;
 
 import com.sun.xml.internal.ws.api.ResourceLoader;
+import fun.CommunFunction;
+import fun.Cours;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,13 +28,14 @@ public class EtuInterfaceController implements Initializable  {
     @FXML
     private ImageView brandingImageView;
     @FXML
-    private BorderPane etuHome;
+    private BorderPane Home;
     @FXML
     JFXButton deconnectionButton;
     @FXML
     private VBox PaneEmploie, PaneInscription, PaneCours, PaneDTuteur,PaneProfile, PaneParametre;
     @FXML
     private VBox menuBar;
+
 
     public EtuInterfaceController() throws SQLException, ClassNotFoundException {
     }
@@ -56,7 +59,7 @@ public class EtuInterfaceController implements Initializable  {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        etuHome.setCenter(root);
+        Home.setCenter(root);
     }
 
     public void EDTCat(MouseEvent mouseEvent) {
@@ -83,7 +86,16 @@ public class EtuInterfaceController implements Initializable  {
     }
 
     public void deconectionBTN(MouseEvent mouseEvent) throws IOException {
-        Parent root = new FXMLLoader().load(getClass().getResource("../Interface/login.fxml"));
+        CommunFunction function = new CommunFunction();
+        Stage stage = (Stage) deconnectionButton.getScene().getWindow();
+        stage.close();
+
+        Platform.runLater(() -> {
+                    String login = "../Interface/login.fxml";
+                    Parent root = function.loadFXMLFills(login);
+                }
+        );
+
     }
 
 }
