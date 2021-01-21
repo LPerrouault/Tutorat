@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -18,11 +17,11 @@
             </Label>
             <VBox prefHeight="585.0" prefWidth="900.0">
                <children>
-                  <ListView fx:id="CoursListe" prefHeight="563.0" prefWidth="900.0">
+                  <VBox fx:id="coursList" prefHeight="542.0" prefWidth="700.0" style="-fx-border-color: black;">
                      <VBox.margin>
-                        <Insets left="40.0" right="40.0" />
+                        <Insets left="100.0" right="100.0" />
                      </VBox.margin>
-                  </ListView>
+                  </VBox>
                </children>
             </VBox>
          </children>

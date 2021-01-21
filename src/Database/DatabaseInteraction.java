@@ -16,13 +16,15 @@ public class DatabaseInteraction  {
     private Connection cn=null;
      Statement st = null;
      ResultSet rs = null;
-     //detaille Connection Database sur Gooogle Cloud
+     //detaille Connection Database
     String databaseName = "tutorat";
     String databaseUser = "root";
     String databasePassword = "";
     String localConnection = "jdbc:mysql://localhost/"+databaseName;
 
-/*    String CloudDatabasePassword = "B0wNnxtzA0DiyEbo";
+/*Temtative de connection a la Database sur Google Cloud
+
+ String CloudDatabasePassword = "B0wNnxtzA0DiyEbo";
     String CloudSQLConnection = "progibdgl-tutorat:europe-west1:progtutorat";
 
     private DataSource createConnection(){
@@ -43,13 +45,15 @@ public class DatabaseInteraction  {
         return pool;
     }*/
 
-    private  static  ArrayList<String> user = new ArrayList<String>();
+    public static ArrayList<String> user = new ArrayList<String>();
     private ArrayList<String> userStatut = new ArrayList<>();
 
+    //contructeur qui initialise la conection a la database
     public DatabaseInteraction() throws SQLException, ClassNotFoundException {
         cn = DatabaseConection.getInstance(localConnection, databaseUser,databasePassword);
     }
 
+    //methode permetant la validation lors d'un connection sur l'interface par la classe LoginController
     public void validationLogin(String identifiant, String password) {
         //Connection a la Base de donnée
         //Preparation de la requête
@@ -82,6 +86,7 @@ public class DatabaseInteraction  {
         return statut;
     }
 
+    //methode permetant une requete pour un seul atribut a la database
     public String DatabaseRequest(String req, String col) throws SQLException {
         String result = "";
         try {
@@ -97,7 +102,7 @@ public class DatabaseInteraction  {
         return result;
     }
 
-
+// methode permetant une modification sur une colone sur le database
     public void DatabaseUpdate(String req) throws SQLException {
         try {
             st = cn.createStatement();
@@ -108,17 +113,15 @@ public class DatabaseInteraction  {
         }
     }
 
-
-    public void lastUser(String u){
-        user.add(u);
-    }
+//methode permetant le stockage du dernier utilisateur
+public void lastUser(String u){
+    user.add(u);
+}
 
     public void  lastUserStatut(String u){ userStatut.add(u);}
 
     public  String lastUserConnected(){
         return user.get(user.size()-1);
     }
-
-
 
 }

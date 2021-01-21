@@ -70,13 +70,106 @@ public Cours findID(String id) throws SQLException {
 	public ArrayList<String> affichageMatiere() throws SQLException {
 			String req = "SELECT matiere.nom FROM matiere\n" +
 					"INNER JOIN user ON user.idFiliere=matiere.idFiliere\n" +
-					"WHERE user.userNumEtu=\""+data.lastUserConnected()+"\"";
+					"WHERE userNumEtu=\""+data.lastUserConnected()+"\" OR userMail=\""+data.lastUserConnected()+"\"\n";
 			ArrayList<String> list = new ArrayList<>();
 		st = cn.createStatement();
 		rs = st.executeQuery(req);
 		while(rs.next()) {
-			String s = rs.getNString("nom");
+			String s = rs.getString("nom");
 			list.add(s);
+		}
+		return list;
+	}
+
+	public ArrayList<Cours> affichageInscriptionCours(String s) throws SQLException {
+		String req1 = "SELECT cours.idCours,cours.nom,cours.date,cours.heur,cours.salle,cours.descriptif\n" +
+				"FROM cours\n" +
+				"INNER JOIN matiere ON matiere.idmatiere=cours.idmatiere\n" +
+				"WHERE matiere.nom=\""+s+"\" AND matiere.idFiliere =(\n" +
+				"    SELECT idFiliere \n" +
+				"    FROM user\n" +
+				"    WHERE userNumEtu=\""+data.lastUserConnected()+"\" OR userMail=\""+data.lastUserConnected()+"\"\n" +
+				"    )";
+
+		ArrayList<Cours> list = new ArrayList<>();
+		Cours cours = new Cours();
+		st = cn.createStatement();
+		rs = st.executeQuery(req1);
+		while(rs.next()) {
+			cours.setIdCours(rs.getInt("idCours"));
+			System.out.println(cours.getIdCours());
+			cours.setNom(rs.getString("nom"));
+			System.out.println(cours.getNom());
+			cours.setDate(rs.getDate("date"));
+			System.out.println(cours.getDate());
+			cours.setHeur(rs.getString("heur"));
+			System.out.println(cours.getHeur());
+			cours.setSalle(rs.getString("salle"));
+			System.out.println(cours.getSalle());
+			cours.setDescriptif(rs.getString("descriptif"));
+			System.out.println(cours.getDescriptif());
+			list.add(cours);
+		}
+		return list;
+	}
+
+	public ArrayList<Cours> affichageCours() throws SQLException {
+		String req1 = "SELECT cours.idCours,cours.nom,cours.date,cours.heur,cours.salle,cours.descriptif\n" +
+				"FROM cours\n" +
+				"INNER JOIN s_inscrit ON cours.idCours=s_inscrit.idCours\n" +
+				"WHERE s_inscrit.userNumEtu =(\n" +
+				"    SELECT userNumEtu FROM user\n" +
+				"    WHERE userNumEtu=\""+data.lastUserConnected()+"\" OR userMail=\""+data.lastUserConnected()+"\"\n" +
+				")";
+
+		ArrayList<Cours> list = new ArrayList<>();
+		Cours cours = new Cours();
+		st = cn.createStatement();
+		rs = st.executeQuery(req1);
+		while(rs.next()) {
+			cours.setIdCours(rs.getInt("idCours"));
+			System.out.println(cours.getIdCours());
+			cours.setNom(rs.getString("nom"));
+			System.out.println(cours.getNom());
+			cours.setDate(rs.getDate("date"));
+			System.out.println(cours.getDate());
+			cours.setHeur(rs.getString("heur"));
+			System.out.println(cours.getHeur());
+			cours.setSalle(rs.getString("salle"));
+			System.out.println(cours.getSalle());
+			cours.setDescriptif(rs.getString("descriptif"));
+			System.out.println(cours.getDescriptif());
+			list.add(cours);
+		}
+		return list;
+	}
+
+	public ArrayList<Cours> affichageCoursTuteur() throws SQLException {
+		String req1 = "SELECT cours.idCours,cours.nom,cours.date,cours.heur,cours.salle,cours.descriptif\n" +
+				"FROM cours \n" +
+				" WHERE idResponsable=(\n" +
+				"     SELECT userNumEtu FROM user\n" +
+				"    WHERE userNumEtu=\""+data.lastUserConnected()+"\" OR userMail=\""+data.lastUserConnected()+"\"\n" +
+				" )";
+
+		ArrayList<Cours> list = new ArrayList<>();
+		Cours cours = new Cours();
+		st = cn.createStatement();
+		rs = st.executeQuery(req1);
+		while(rs.next()) {
+			cours.setIdCours(rs.getInt("idCours"));
+			System.out.println(cours.getIdCours());
+			cours.setNom(rs.getString("nom"));
+			System.out.println(cours.getNom());
+			cours.setDate(rs.getDate("date"));
+			System.out.println(cours.getDate());
+			cours.setHeur(rs.getString("heur"));
+			System.out.println(cours.getHeur());
+			cours.setSalle(rs.getString("salle"));
+			System.out.println(cours.getSalle());
+			cours.setDescriptif(rs.getString("descriptif"));
+			System.out.println(cours.getDescriptif());
+			list.add(cours);
 		}
 		return list;
 	}

@@ -22,9 +22,10 @@ public class devenirTuteur {
         }
     }
 
+    //Requette qui change le statut dans la base pour que la personne devienne etudiant tuteur
     public void BtnEngager(ActionEvent event) throws  SQLException {
         String user = dataInteract.lastUserConnected();
-        String req = "UPDATE user SET statut = \"EtudiantTuteur\"  WHERE userNumEtu = \""+user+"\" OR userMail = \""+user+"\" ";
+        String req = "UPDATE user SET statut = \"Etudiant-Tuteur\"  WHERE userNumEtu = \""+user+"\" OR userMail = \""+user+"\" ";
         dataInteract.DatabaseUpdate(req);
     }
 }

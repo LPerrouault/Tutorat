@@ -25,6 +25,7 @@ public class profile implements Initializable {
     javafx.scene.control.Label  labelStatut;
 
 
+    //requete SQL permetant l'affichage des information
     DatabaseInteraction databaseInteraction = new DatabaseInteraction();
     String user =  databaseInteraction.lastUserConnected();
     String reqNumEtu = "SELECT userNumetu FROM user where userNumetu="+user+" or userMail ="+user;
@@ -42,10 +43,9 @@ public class profile implements Initializable {
             "WHERE user.userNumEtu=\""+user+"\" OR user.userMail=\""+user+"\"";
     String resultFiliere = databaseInteraction.DatabaseRequest(reqfiliere, "nom");
 
-    public profile() throws SQLException, ClassNotFoundException {
-//        user = databaseInteraction.lastUserConnected();
-    }
+    public profile() throws SQLException, ClassNotFoundException {}
 
+    //initialisation des affichage au demarage du controller
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         labelNumEtu.setText(resultNumEtu);

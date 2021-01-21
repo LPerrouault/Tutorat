@@ -1,62 +1,78 @@
 package Category;
 
-import Database.DatabaseInteraction;
-import com.jfoenix.controls.JFXButton;
 import fun.Cours;
 import fun.UserQueries;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListCell;
+import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class mesCours implements Initializable {
 
-
     @FXML
-    private ListView<String> listCours;
+    public VBox coursList;
 
-    private ObservableList observableList = FXCollections.observableArrayList();;
-    private CourListCellController listCellController;
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<Cours> listCourTuteur = new ArrayList<>();
+    UserQueries userQueries;
 
-
-
-    public mesCours() {
+    public mesCours() throws SQLException, ClassNotFoundException {
+        userQueries = new UserQueries();
+        listCourTuteur.clear();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        coursList();
+        try {
+            affichageCoursTuteurEtudiant();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void coursList(){
-        observableList.removeAll(observableList);
-        String a ="bonjour";
-        String b ="bonjour";
-        String c ="bonjour";
-        String d ="bonjour";
-        observableList.addAll(a,b,c,d);
-        listCours.getItems().addAll(observableList);
+    public void affichageCoursTuteurEtudiant() throws SQLException, ClassNotFoundException {
+
+        for (Cours cours: userQueries.affichageCoursTuteur()){
+            coursTuteur();
+        }
+
+        for (Cours cours: userQueries.affichageCours()){
+            coursEtudiant();
+        }
     }
 
-    public void desinscrire(MouseEvent mouseEvent) { }
+    private void coursTuteur() throws SQLException, ClassNotFoundException {
 
-    public void modifierCreneaux(MouseEvent mouseEvent) { }
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Interface/category/courListCellTuteur.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        coursList.getChildren().add(root);
+    }
 
+    private void coursEtudiant() throws SQLException, ClassNotFoundException {
 
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("Interface/category/coursListCell.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        coursList.getChildren().add(root);
+    }
 
 }

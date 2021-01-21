@@ -6,13 +6,12 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController.LoginController">
    <center>
       <AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #47525c;" BorderPane.alignment="CENTER">
          <children>
@@ -20,24 +19,24 @@
                <image>
                </image>
             </ImageView>
-            <JFXTextField fx:id="TexfieldIdentifiant" focusColor="#2baafc" layoutX="186.0" layoutY="165.0" prefHeight="35.0" prefWidth="260.0" promptText=" Identifiants" style="-fx-prompt-text-fill: #DCDCDC; -fx-focus-color: #DCDCDC;" unFocusColor="WHITE">
+            <JFXTextField fx:id="TexfieldIdentifiant" alignment="CENTER" focusColor="#2baafc" layoutX="153.0" layoutY="165.0" prefHeight="35.0" prefWidth="293.0" promptText=" Identifiants" style="-fx-prompt-text-fill: #DCDCDC; -fx-focus-color: #DCDCDC;" unFocusColor="WHITE">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="PasswordField" focusColor="#2baafc" layoutX="186.0" layoutY="239.0" prefHeight="35.0" prefWidth="260.0" promptText=" Mot de passe" style="-fx-prompt-text-fill: #DCDCDC;" unFocusColor="WHITE">
+            <JFXPasswordField fx:id="PasswordField" alignment="CENTER" focusColor="#2baafc" layoutX="156.0" layoutY="239.0" prefHeight="35.0" prefWidth="290.0" promptText=" Mot de passe" style="-fx-prompt-text-fill: #DCDCDC;" unFocusColor="WHITE">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
             </JFXPasswordField>
-            <JFXButton fx:id="loginButton" layoutX="216.0" layoutY="318.0" onAction="#loginAction" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #2BAAFC;" text="Se connecter" textFill="WHITE">
+            <JFXButton fx:id="loginButton" layoutX="186.0" layoutY="318.0" onAction="#loginAction" prefHeight="48.0" prefWidth="230.0" style="-fx-background-color: #2BAAFC;" text="Se connecter" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </JFXButton>
-            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="150.0" layoutY="194.0" size="30" />
-            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="150.0" layoutY="268.0" size="30" />
-            <Hyperlink fx:id="linkFogetPassword" layoutX="237.0" layoutY="406.0" onAction="#linkAction" text="mots de passe oublié ?" textFill="GAINSBORO">
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="129.0" layoutY="194.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="130.0" layoutY="267.0" size="30" />
+            <Hyperlink fx:id="linkFogetPassword" alignment="CENTER" layoutY="406.0" onAction="#linkAction" prefHeight="18.0" prefWidth="600.0" text="mots de passe oublié ?" textFill="GAINSBORO">
                <font>
                   <Font name="Arial Italic" size="10.5" />
                </font>
