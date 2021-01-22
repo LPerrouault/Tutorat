@@ -67,7 +67,7 @@ public class choixCreneau {
             } else
                 errorLabel.setText("Cette Matiere n'existe pas.");
             errorLabel.setTextFill(Color.RED);
-            }
+        }
 
     }
 

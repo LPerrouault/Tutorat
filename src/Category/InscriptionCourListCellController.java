@@ -39,4 +39,6 @@ public class InscriptionCourListCellController extends VBox{
     public InscriptionCourListCellController() throws SQLException, ClassNotFoundException {
     }
 
+    public void buttonInscrip(MouseEvent mouseEvent) {
+    }
 }

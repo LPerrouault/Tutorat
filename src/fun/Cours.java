@@ -1,6 +1,7 @@
 package fun;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 
 public class Cours {
@@ -8,15 +9,17 @@ public class Cours {
 	private int idCours;
 	private String nom;
 	private Date date;
-	private String heur;
+	private Time heur;
 	private String salle;
 	private int NbreElevMax;
 	private String descriptif;
 	private int idMatiere;
 	public ArrayList<String> courList;
 
-
 	public Cours() {
+	}
+	
+	public Cours(int idCours, String nom, Date date, Time heur, String salle, int NbreElevMax, String descriptif, int idMatiere) {
 
 		this.idCours = idCours;
 		this.nom = nom;
@@ -25,19 +28,20 @@ public class Cours {
 		this.NbreElevMax = NbreElevMax;
 		this.descriptif = descriptif;
 		this.idMatiere = idMatiere;
+		this.heur = heur;
 		courList= new ArrayList<>();
 		courList.add(String.valueOf(getIdCours()));
 		courList.add(getNom());
 		courList.add(String.valueOf(getDate()));
-		courList.add(getHeur());
+		//courList.add(getHeur());
 		courList.add(getSalle());
 	}
 
-	public String getHeur() {
+	public Time getHeur() {
 		return heur;
 	}
 
-	public void setHeur(String heur) {
+	public void setHeur(Time heur) {
 		this.heur = heur;
 	}
 
@@ -121,5 +125,11 @@ public class Cours {
 				", descriptif='" + descriptif + '\'' +
 				", idMatiere=" + idMatiere +
 				'}';
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Cours c = (Cours) obj;
+		return (c.getIdCours() == this.idCours);
 	}
 }

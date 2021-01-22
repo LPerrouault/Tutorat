@@ -124,4 +124,10 @@ public void lastUser(String u){
         return user.get(user.size()-1);
     }
 
+    //Utilisatio pour classe test
+    // public  String lastUserConnected(){
+    //     if (user.size() == 0) return "21603273";
+    //    return user.get(user.size()-1);
+    //}
+
 }

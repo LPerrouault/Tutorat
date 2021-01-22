@@ -12,6 +12,16 @@ public class User {
 	public User() {
 		
 	}
+	
+	public User(String NumEtu, String nom, String prenom, String mail, String passwd, String statut, int idFiliere) {
+		this.NumEtu = NumEtu;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.passwd = passwd;
+		this.statut = statut;
+		this.idFiliere = idFiliere;
+	}
 
 
 	public String getNumEtu() {
@@ -80,6 +90,12 @@ public class User {
 
 	public void setIdFiliere(int idFiliere) {
 		this.idFiliere = idFiliere;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		User us = (User) obj;
+		return (us.getNumEtu() == this.NumEtu);
 	}
 
 
